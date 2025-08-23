@@ -95,6 +95,11 @@ Countries included: France, Germany, Spain
 
 Pull requests are welcome :)
 
+# App Deployment
+
+This app is deployed in streamlit, do check it out
+link - https://ann-classification-churn-prediction-ahndagqmrttl4grpmsa4hz.streamlit.app/
+
 # License
 
 This project is licensed under the General Public License.
