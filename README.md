@@ -53,7 +53,9 @@ The app takes user inputs (age, geography, balance, etc.) and predicts whether t
 
 • Streamlit → Deployment
 
-📂 Project Structure
+## 📂 Project Structure
+
+```bash
 📦 customer-churn-ann
 ├── Churn_Modelling/          # Dataset (raw/processed)
 ├── experiments/              # Jupyter notebooks for EDA & model building
@@ -64,6 +66,7 @@ The app takes user inputs (age, geography, balance, etc.) and predicts whether t
 ├── README.md                 # Project documentation
 ├── label_encoder_gender      # converting categorical feature into numerical
 └── onehot_encoder_geo        # converting categorical feature into numerical
+```
 
 📈 Results
 
