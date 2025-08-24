@@ -54,13 +54,13 @@ Built a **Streamlit web application** to make predictions:
 📦 customer-churn-salary-ann
 ├── 📂 Churn_Modelling/           # Dataset (raw/processed)
 ├── 📂 experiments/               # Jupyter notebooks for EDA & model building
-│   ├── churn_prediction.ipynb    # ANN model for churn classification
+│   ├── experiments.ipynb    # ANN model for churn classification
 │   └── salary_prediction.ipynb   # ANN model for salary regression
 ├── 📂 model/                     
-│   ├── churn_model.h5            # Saved churn model weights
-│   └── salary_model.h5           # Saved salary model weights
+│   ├── model.h5            # Saved churn model weights
+│   └── salary_prediction__reg_model.h5.h5           # Saved salary model weights
 ├── 📂 app/                       
-│   └── streamlit_app.py          # Streamlit application file
+│   └── app.py          # Streamlit application file
 ├── 📂 logs/                      # TensorBoard logs
 ├── 📜 requirements.txt           # Dependencies
 ├── 📜 README.md                  # Project documentation
