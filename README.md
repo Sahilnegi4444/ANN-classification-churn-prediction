@@ -1,108 +1,122 @@
-# Customer Churn Prediction using ANN
+# Customer Churn & Estimated Salary Prediction using ANN
 
-This project is an end-to-end Artificial Neural Network (ANN) classification model for predicting customer churn. The aim of this project was to understand the working of neural network parameters and build a generalized model for customer churn prediction across France, Germany, and Spain.
+This project is an end-to-end **Artificial Neural Network (ANN)** implementation for:
+- **Customer Churn Prediction (Classification)** → Predicting whether a customer will exit or stay.  
+- **Estimated Salary Prediction (Regression)** → Predicting a customer’s estimated salary based on demographic and account features.  
 
-# Project Workflow
-1️⃣ Data Cleaning & Feature Engineering
+The aim of this project was to understand the working of neural network parameters and build **generalized ANN models** for both classification and regression tasks.
 
-• Handled missing values and performed data preprocessing.
+---
 
-• Encoded categorical variables such as Geography (France, Germany, Spain) and Gender.
+## 📌 Project Workflow  
 
-• Scaled numerical features for better model convergence.
+### 1️⃣ Data Cleaning & Feature Engineering  
+- Handled missing values and performed data preprocessing.  
+- Encoded categorical variables such as Geography (France, Germany, Spain) and Gender.  
+- Scaled numerical features for better model convergence.  
+- Split the dataset into training and testing sets.  
 
-• Split the dataset into training and testing sets.
+### 2️⃣ Building Deep Neural Networks  
+- Implemented two separate ANN models:  
+  - **Churn Prediction ANN (Classification)**  
+  - **Salary Prediction ANN (Regression)**  
+- Used ~3000 parameters for training churn model.  
+- Added **Dense layers, Dropout, L2 Regularization, and Activation functions** to prevent overfitting.  
+- Optimized hyperparameters for better generalization.  
 
-2️⃣ Building the Deep Neural Network
+### 3️⃣ Model Training & Monitoring  
+- Trained the models on the prepared dataset.  
+- Used **TensorBoard** to visualize:  
+  - Training vs Validation Accuracy (churn model)  
+  - Training vs Validation Loss (both models)  
+  - Model learning curves  
 
-• Implemented a Deep Learning model using ANN for binary classification.
+### 4️⃣ Deployment with Streamlit  
+Built a **Streamlit web application** to make predictions:  
+- For **Customer Churn** → Takes user inputs (age, geography, balance, etc.) and predicts churn probability.  
+- For **Estimated Salary** → Predicts customer’s estimated salary based on demographic details.  
 
-• Used around 3000 paramters for training model.
+---
 
-• Used Dense layers, Dropout, L2 Regularization and Activation functions to prevent overfitting.
+## 🛠️ Tech Stack  
+- **Python**  
+- **Pandas, NumPy** → Data Preprocessing & Feature Engineering
+- **Scikit- learn** →  train_test_spliting
+- **TensorFlow / Keras** → Deep Neural Networks (Classification & Regression)  
+- **TensorBoard** → Model Monitoring  
+- **Streamlit** → Deployment  
 
-• Optimized hyperparameters for model generalization.
+---
 
-3️⃣ Model Training & Monitoring
-
-• Trained the model on the prepared dataset.
-
-• Used TensorBoard to visualize:
-
-• Training accuracy vs Validation accuracy
-
-• Training loss vs Validation loss
-
-• Model learning curves
-
-4️⃣ Deployment with Streamlit
-
-Built a Streamlit web application to make predictions on new customer data.
-
-The app takes user inputs (age, geography, balance, etc.) and predicts whether the customer is likely to churn or not.
-
-🛠️ Tech Stack
-
-• Python
-
-• Pandas, NumPy → Data Preprocessing & Feature Engineering
-
-• TensorFlow / Keras → Deep Neural Network
-
-• TensorBoard → Model Monitoring
-
-• Streamlit → Deployment
-
-## 📂 Project Structure
+## 📂 Project Structure  
 
 ```bash
-📦 customer-churn-ann
-├── Churn_Modelling/          # Dataset (raw/processed)
-├── experiments/              # Jupyter notebooks for EDA & model building
-├── model/                    # Saved models & weights
-├── app/streamlit_app.py      # Streamlit application file
-├── logs/                     # TensorBoard logs
-├── requirements.txt          # Dependencies
-├── README.md                 # Project documentation
-├── label_encoder_gender      # converting categorical feature into numerical
-└── onehot_encoder_geo        # converting categorical feature into numerical
+📦 customer-churn-salary-ann
+├── 📂 Churn_Modelling/           # Dataset (raw/processed)
+├── 📂 experiments/               # Jupyter notebooks for EDA & model building
+│   ├── churn_prediction.ipynb    # ANN model for churn classification
+│   └── salary_prediction.ipynb   # ANN model for salary regression
+├── 📂 model/                     
+│   ├── churn_model.h5            # Saved churn model weights
+│   └── salary_model.h5           # Saved salary model weights
+├── 📂 app/                       
+│   └── streamlit_app.py          # Streamlit application file
+├── 📂 logs/                      # TensorBoard logs
+├── 📜 requirements.txt           # Dependencies
+├── 📜 README.md                  # Project documentation
+├── 📜 label_encoder_gender.py    # Converts Gender into numerical
+└── 📜 onehot_encoder_geo.py      # One-hot encoding for Geography
 ```
 
-📈 Results
+## 📈 Results
 
-• Built a generalized ANN model that predicts customer churn effectively.
+Churn Model (Classification):
 
-• TensorBoard visualizations helped in tuning hyperparameters.
+Achieved good accuracy and generalization.
 
-• Successfully deployed on Streamlit for real-time predictions.
+TensorBoard visualizations guided hyperparameter tuning.
 
-🎯 Key Learnings
+Salary Model (Regression):
 
-• Importance of data cleaning & feature engineering before model training.
+Predicted estimated salary with low error rates.
 
-• How ANN parameters (layers, neurons, dropout, activation, optimizer) impact model performance.
+Evaluated using MSE (Mean Squared Error) and R² Score.
 
-• Using TensorBoard for model explainability.
+Both models were successfully deployed in Streamlit for real-time predictions.
 
-• Deployment of ML models using Streamlit.
+# Key Learnings
 
-# Dataset
+Importance of data cleaning & feature engineering before model training.
 
-The dataset consists of customer details including geography, gender, age, balance, credit score, tenure, and exit status.
+How ANN parameters (layers, neurons, dropout, activation, optimizer) impact performance.
 
-Target variable: Exited (1 = Churn, 0 = Retained)
+Difference between classification and regression ANN models.
+
+Using TensorBoard for model explainability.
+
+Deployment of multiple ML models in a single Streamlit app.
+
+# 📊 Dataset
+
+The dataset consists of customer details including geography, gender, age, balance, credit score, tenure, estimated salary, and exit status.
+
+Target variables:
+
+Exited → Binary (1 = Churn, 0 = Retained)
+
+EstimatedSalary → Continuous (salary value in currency units)
 
 Countries included: France, Germany, Spain
 
 # Contributing
 
-Pull requests are welcome :)
+Pull requests are welcome! 😊
 
 # App Deployment
 
-This app is deployed in streamlit, do check it out
-link - https://ann-classification-churn-prediction-ahndagqmrttl4grpmsa4hz.streamlit.app/
+This app is deployed on Streamlit, check it out here: https://ann-classification-churn-prediction-ahndagqmrttl4grpmsa4hz.streamlit.app/
+👉 Customer Churn & Salary Prediction App
 
 # License
 
-This project is licensed under the General Public License.
+This project is licensed under the General Public License (GPL).
