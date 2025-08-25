@@ -22,7 +22,11 @@ The aim of this project was to understand the working of neural network paramete
   - **Salary Prediction ANN (Regression)**  
 - Used ~3000 parameters for training churn model.  
 - Added **Dense layers, Dropout, L2 Regularization, and Activation functions** to prevent overfitting.  
-- Optimized hyperparameters for better generalization.  
+- Optimized hyperparameters for better generalization.
+- - **Hyperparameter tuning** applied to the churn model:  
+  - using **gridsearchCV** for tuning paramters- **neurons, layers, epochs**.
+  - Improved model performance and reduced overfitting.  
+  
 
 ### 3️⃣ Model Training & Monitoring  
 - Trained the models on the prepared dataset.  
@@ -54,13 +58,14 @@ Built a **Streamlit web application** to make predictions:
 📦 customer-churn-salary-ann
 ├── 📂 Churn_Modelling/           # Dataset (raw/processed)
 ├── 📂 experiments/               # Jupyter notebooks for EDA & model building
-│   ├── experiments.ipynb    # ANN model for churn classification
+│   ├── experiments.ipynb         # ANN model for churn classification
 │   └── salary_prediction.ipynb   # ANN model for salary regression
 ├── 📂 model/                     
-│   ├── model.h5            # Saved churn model weights
-│   └── salary_prediction__reg_model.h5.h5           # Saved salary model weights
+│   ├── model.h5                    # Saved churn model weights
+│   └── salary_prediction__reg_model.h5          # Saved salary model weights
 ├── 📂 app/                       
-│   └── app.py          # Streamlit application file
+│   └── app.py                      # Streamlit application file
+├── 📂 hyperparameter_tuning.ipynb  # Tuning parameters(GridsearchCV)
 ├── 📂 logs/                      # TensorBoard logs
 ├── 📜 requirements.txt           # Dependencies
 ├── 📜 README.md                  # Project documentation
